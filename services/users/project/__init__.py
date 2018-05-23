@@ -5,10 +5,13 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+
 # instantiate the db
 db = SQLAlchemy()
 
+
 def create_app(script_info=None):
+
     # instantiate the app
     app = Flask(__name__)
 
@@ -24,5 +27,5 @@ def create_app(script_info=None):
     app.register_blueprint(users_blueprint)
 
     # shell context for flask cli
-    app.shell_context_processor({'app':app, 'db':db})
+    app.shell_context_processor({'app': app, 'db': db})
     return app
